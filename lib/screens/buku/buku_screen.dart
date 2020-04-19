@@ -27,7 +27,6 @@ class _BukuState extends State<BukuScreen> {
     BukuRepository().getAllBuku().then((result) {
       this.setState(() {
         result.forEach((buku) {
-          // print(buku);
           bukus.add(BukuModel.fromMap(buku));
         });
       });
@@ -124,9 +123,6 @@ class _BukuState extends State<BukuScreen> {
             context,
             MaterialPageRoute(
               builder: (context) => FormBukuScreen(),
-              // Pass the arguments as part of the RouteSettings. The
-              // ExtractArgumentScreen reads the arguments from these
-              // settings.
               settings: RouteSettings(
                 arguments: BukuArguments(
                   id: 0,
